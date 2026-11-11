@@ -79,6 +79,56 @@ footer .actions{margin-top:1rem}
 .kazoo h2{font-size:clamp(2.6rem,6vw,4.3rem)}
 .kazoo p:not(.kicker){max-width:72ch}
 .kazoo p+p{margin-top:.9rem}
+
+:root{--plum:#5a3159;--pink:#f1dce7;--blue:#dce8f2;--navy:#233c54}
+[hidden]{display:none!important}
+.switcher{padding-top:2.5rem;padding-bottom:1rem}
+.switcher h2{font-size:clamp(2.75rem,6vw,4.7rem)}
+.switcher [role=tablist]{display:flex;gap:.6rem;flex-wrap:wrap}
+.switcher button{font:inherit;font-weight:700;color:var(--plum);background:transparent;border:1px solid var(--plum);border-radius:100px;padding:.55rem 1rem;cursor:pointer}
+.switcher button[aria-selected=true],.kazoo .button{background:var(--plum);color:white}
+.switcher button:focus-visible,summary:focus-visible{outline:3px solid #9c5d24;outline-offset:4px}
+.kazoo{background:var(--pink);border-color:#d9b9cd;margin-top:0}
+.kazoo .button:hover{background:#472547}
+.project-notes{margin-top:1.15rem}
+.project-notes summary,.interest-card summary{font-weight:700;cursor:pointer}
+.project-notes p{margin-top:.8rem}
+.interest-cards{display:grid;gap:.75rem}
+.interest-card{padding:1rem 1.15rem;border:1px solid #c5cdb6;background:var(--accent);color:var(--green)}
+.interest-card.aviation{background:var(--blue);color:var(--navy);border-color:#bacddd}
+.interest-card.formula{background:var(--pink);color:var(--plum);border-color:#d9b9cd}
+.interest-card p{margin:.55rem 0 0}
+
+.course-tools{margin-bottom:1rem}
+.course-tools label{display:block;font-weight:700;margin-bottom:.3rem}
+.course-tools input{display:block;width:min(100%,28rem);padding:.65rem .8rem;border:1px solid #7c897f;border-radius:4px;background:white;color:var(--ink);font:inherit}
+.school-filters{display:flex;gap:.55rem;flex-wrap:wrap;margin:.85rem 0 .45rem}
+.school-filters button{border:1px solid #637d95;background:transparent;color:var(--navy);font:inherit;font-weight:700;padding:.4rem .8rem;border-radius:100px;cursor:pointer}
+.school-filters button[aria-pressed=true]{background:var(--blue);border-color:var(--navy)}
+.course-tools :is(button,input):focus-visible{outline:3px solid #9c5d24;outline-offset:3px}
+.course-count{color:var(--muted);font-size:.9rem}
+
+.travel-map{background:var(--blue);color:var(--navy);border:1px solid #bacddd;padding:clamp(1rem,4vw,2rem);margin-bottom:1.5rem}
+.travel-map h3{font:2.3rem/1 var(--serif);margin-bottom:.4rem}
+.travel-map-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.travel-map .button{background:var(--plum)}
+.travel-map details{margin-top:1rem;border-top:1px solid #bacddd;padding-top:.85rem}
+.travel-map summary{cursor:pointer;font-weight:700}
+.map-frame iframe{display:block;width:100%;height:clamp(25rem,65vh,41rem);border:1px solid #bacddd;background:white;margin-top:1rem}
+
+.strengths h2{font-size:clamp(2.75rem,6vw,4.7rem)}
+.strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.strength{display:grid;grid-template-rows:auto 1fr auto;gap:.55rem;padding:1.25rem;border:1px solid var(--line);text-decoration:none}
+.strength strong{font:1.8rem/1.05 var(--serif)}
+.strength-link{font-size:.9rem;font-weight:700;text-decoration:underline}
+.strength.research{background:var(--blue);color:var(--navy)}
+.strength.creative{background:var(--pink);color:var(--plum)}
+.strength.coordination{background:#e8ebdb;color:var(--green)}
+.strength:hover .strength-link{text-decoration-thickness:2px}
+@media(max-width:710px){.strength-grid{grid-template-columns:1fr}}
+.global-project{background:var(--blue);color:var(--navy);border:1px solid #bacddd;padding:clamp(1.25rem,4vw,2.5rem)}
+.global-project h2{font-size:clamp(2.6rem,6vw,4.3rem)}
+.global-project p:not(.kicker){max-width:72ch}
 </style>
 </head>
 <body>
@@ -98,13 +148,32 @@ footer .actions{margin-top:1rem}
     <p><strong>B.B.A. in Marketing</strong><br>Texas A&amp;M University, May 2026<br><span class="sub">Analytics and Consulting · Economics minor · Cum Laude</span></p>
   </aside>
 </div>
-<section class="band" id="work">
+
+<section class="wrap strengths" aria-labelledby="strengths-title">
+  <h2 id="strengths-title">What I bring</h2>
+  <div class="strength-grid">
+    <a class="strength research" href="#project-transit" data-project="0"><strong>Research &amp; insights</strong><span>Turn surveys and interviews into recommendations.</span><span class="strength-link">Campus transit study <span aria-hidden="true">↗</span></span></a>
+    <a class="strength creative" href="#project-kazoo" data-project="1"><strong>Creative strategy</strong><span>Use customer research to shape campaign ideas and find potential partners.</span><span class="strength-link">KazooView <span aria-hidden="true">↗</span></span></a>
+    <a class="strength coordination" href="#experience"><strong>Program coordination</strong><span>Coordinate events and work with students and employer partners.</span><span class="strength-link">Experience <span aria-hidden="true">↗</span></span></a>
+  </div>
+</section>
+
+<div id="work" class="wrap switcher">
+  <h2>Projects</h2>
+  <div role="tablist" aria-label="Projects" hidden>
+    <button id="tab-transit" type="button" role="tab" aria-controls="project-transit" aria-selected="true">Campus Transit</button>
+    <button id="tab-kazoo" type="button" role="tab" aria-controls="project-kazoo" aria-selected="false" tabindex="-1">KazooView</button>
+    <button id="tab-global" type="button" role="tab" aria-controls="project-global" aria-selected="false" tabindex="-1">Global Marketing</button>
+  </div>
+</div>
+<section class="band" id="project-transit" aria-labelledby="tab-transit">
   <div class="wrap case">
     <div>
       <p class="kicker">Featured class project · Texas A&amp;M</p>
       <h2>Campus transit study</h2>
-      <p>How might an underground transit system change the way people get around campus? I designed a Qualtrics survey distributed to 156 stakeholders and conducted 26 interviews to understand travel habits, likely adoption, and willingness to pay.</p>
-      <p>I cleaned the survey data in Excel, built an interactive Tableau dashboard, and combined the survey and interview findings into a phased implementation recommendation.</p>
+      <p>How might an underground transit system change the way people get around campus?</p>
+      <details class="project-notes"><summary>See how we got there</summary><p>I designed a Qualtrics survey distributed to 156 stakeholders and conducted 26 interviews to understand travel habits, likely adoption, and willingness to pay.</p>
+      <p>I cleaned the survey data in Excel, built an interactive Tableau dashboard, and combined the survey and interview findings into a phased implementation recommendation.</p></details>
     </div>
     <div class="metrics" aria-label="Survey findings">
       <div class="metric"><strong>62%</strong><span>of respondents had missed a campus bus</span><div class="track" aria-hidden="true"><div class="fill" style="width:62%"></div></div></div>
@@ -115,17 +184,36 @@ footer .actions{margin-top:1rem}
 
 
 
-<section class="wrap kazoo" aria-labelledby="kazoo-title">
+<section class="wrap kazoo" id="project-kazoo" aria-labelledby="tab-kazoo">
   <p class="kicker">Texas A&amp;M · MKTG 448 Marketing Strategy · Spring 2026</p>
   <h2 id="kazoo-title">KazooView | Go-to-market strategy</h2>
   <p>For a semester-long live-client capstone, our marketing team collaborated with biomedical engineering students on KazooView, a device concept designed to help parents get a clearer view of their child’s throat at home. We used interviews, surveys, and competitor research to understand what mattered most to parents, including material safety, ease of use, and making throat exams less stressful.</p>
-  <p>As <strong>Creative Strategy Lead</strong>, I researched potential partners and developed advertising concepts. Our team recommended introducing KazooView through parenting communities and nurse educators, using short demos to show how the device was intended to work. We presented our go-to-market strategy to the client and delivered a written report.</p>
+  <details class="project-notes"><summary>See how we got there</summary><p>As <strong>Creative Strategy Lead</strong>, I researched potential partners and developed advertising concepts. Our team recommended introducing KazooView through parenting communities and nurse educators, using short demos to show how the device was intended to work. We presented our go-to-market strategy to the client and delivered a written report.</p></details>
   <div class="actions"><a class="button" href="kazoo-view-selected-slides.pdf">View selected slides <span aria-hidden="true">↗</span></a></div>
+</section>
+<section class="wrap global-project" id="project-global" aria-labelledby="tab-global">
+  <p class="kicker">Texas A&amp;M · MKTG 401 Global Marketing</p>
+  <h2>James Avery | Market entry strategy for Mexico</h2>
+  <p>For a team project, we explored how James Avery Artisan Jewelry could enter Mexico while preserving its emphasis on craftsmanship and jewelry with personal meaning. We compared competitors Pandora and Tous and considered how family milestones and gift-giving traditions could shape the brand’s positioning.</p>
+  <p><strong>My contribution.</strong> I worked on the market entry strategy, promotional strategy, and implementation roadmap, outlining how James Avery could enter Mexico, reach customers, and roll out the launch.</p>
+  <details class="project-notes"><summary>See how we got there</summary>
+    <p>We proposed direct exporting, e-commerce, retail partnerships, and flagship storefronts. Our launch concept, <em>Joyas con Significado</em> (Jewelry with Meaning), centered on Mother’s Day in Mexico and used family stories to show the meaning behind each piece.</p>
+  </details>
 </section>
 <section id="coursework" class="wrap field">
   <h2>Coursework</h2>
+  <div class="course-tools" hidden>
+    <label for="course-search">Search courses</label>
+    <input id="course-search" type="search" placeholder="Try strategy, marketing, or SQL">
+    <div class="school-filters" role="group" aria-label="Filter by school">
+      <button type="button" data-school="all" aria-pressed="true">All schools</button>
+      <button type="button" data-school="tamu" aria-pressed="false">Texas A&amp;M</button>
+      <button type="button" data-school="smu" aria-pressed="false">SMU</button>
+    </div>
+    <p class="course-count" role="status"></p>
+  </div>
   <div class="coursework">
-    <details open><summary>SMU Cox School of Business <span>8 courses</span></summary><ul class="course-list"><li><span class="course-code">ITOM 6252</span><div><strong>Decision Models</strong><p>Build spreadsheet models for optimization, simulation, and decisions under uncertainty.</p></div></li>
+    <details open data-school="smu"><summary>SMU Cox School of Business <span>8 courses</span></summary><ul class="course-list"><li><span class="course-code">ITOM 6252</span><div><strong>Decision Models</strong><p>Build spreadsheet models for optimization, simulation, and decisions under uncertainty.</p></div></li>
 <li><span class="course-code">ITOM 6253</span><div><strong>Programming for Analytics</strong><p>Use code to prepare, explore, and visualize data for business questions.</p></div></li>
 <li><span class="course-code">ITOM 6268</span><div><strong>Business Analytics Consulting</strong><p>Frame business problems, scope an analysis, and communicate recommendations.</p></div></li>
 <li><span class="course-code">MAST 6201</span><div><strong>Managerial Statistics</strong><p>Apply probability, hypothesis tests, and regression to business decisions.</p></div></li>
@@ -133,7 +221,7 @@ footer .actions{margin-top:1rem}
 <li><span class="course-code">ITOM 6267</span><div><strong>Predictive AI and ML</strong> <span class="status">In progress</span><p>Train and evaluate predictive models using business datasets.</p></div></li>
 <li><span class="course-code">MKTG 6247</span><div><strong>AI Marketing</strong> <span class="status">In progress</span><p>Assess marketing applications of AI and design pilots with measurable outcomes.</p></div></li>
 <li><span class="course-code">MKTG 6279</span><div><strong>Data-Driven Marketing</strong> <span class="status">In progress</span><p>Use segmentation and customer profiling to inform targeting decisions.</p></div></li></ul><p class="catalog"><a href="https://catalog.smu.edu/programs/BUSAN-MSBA/requirements-krhha">SMU program catalog ↗</a></p></details>
-    <details><summary>Texas A&amp;M Mays Business School <span>21 courses</span></summary><ul class="course-list"><li><span class="course-code">MKTG 321</span><div><strong>Marketing</strong><p>Explore how businesses identify customer needs and make product, pricing, promotion, and distribution decisions.</p></div></li>
+    <details data-school="tamu"><summary>Texas A&amp;M Mays Business School <span>21 courses</span></summary><ul class="course-list"><li><span class="course-code">MKTG 321</span><div><strong>Marketing</strong><p>Explore how businesses identify customer needs and make product, pricing, promotion, and distribution decisions.</p></div></li>
 <li><span class="course-code">MKTG 322</span><div><strong>Consumer Behavior</strong><p>Study the social and psychological factors behind what people buy and how they decide.</p></div></li>
 <li><span class="course-code">MKTG 323</span><div><strong>Marketing Research</strong><p>Design research, collect and interpret data, and communicate findings for marketing decisions.</p></div></li>
 <li><span class="course-code">MKTG 335</span><div><strong>Professional Selling</strong><p>Practice identifying buyer needs, presenting solutions, and building customer relationships.</p></div></li>
@@ -170,13 +258,126 @@ footer .actions{margin-top:1rem}
 <section id="interests" class="interests">
   <div class="wrap field">
     <h2>Outside of work</h2>
+    <section class="travel-map" aria-labelledby="travel-map-title">
+      <div class="travel-map-top">
+        <div><h3 id="travel-map-title">My travel map</h3><p>Explore the places I’ve pinned across 23 countries.</p></div>
+        <a class="button" href="https://pintraveler.net/map?user=1O6nlJBvjWZxQMReKnK9q4KGgdH3" target="_blank" rel="noopener noreferrer">Open in Pin Traveler <span aria-hidden="true">↗</span></a>
+      </div>
+      <details id="travel-map">
+        <summary>Show interactive map</summary>
+        <div class="map-frame"></div>
+      </details>
+    </section>
     <div class="interest-layout">
       <div class="travel"><strong>20+</strong><h3>Countries visited</h3><p>International travel is one of my favorite ways to explore.</p></div>
-      <dl class="interest-list"><div><dt>Aviation</dt><dd>The Boeing 747 is my favorite aircraft. I’m part of the Business Aviation Club at SMU.</dd></div><div><dt>Formula 1</dt><dd>I follow Formula 1.</dd></div><div><dt>Tennis</dt><dd>A personal interest.</dd></div></dl>
+      <div class="interest-cards">
+        <details class="interest-card aviation"><summary>Aviation</summary><p>The Boeing 747 is my favorite aircraft, and I’ve had the chance to fly on one three times. I was involved in Women in Aviation at Texas A&amp;M and am now part of the Business Aviation Club at SMU.</p></details>
+        <details class="interest-card formula"><summary>Formula 1</summary><p>Seeing Charles Leclerc take the checkered flag at the 2024 United States Grand Prix in Austin was a Formula 1 highlight for me.</p></details>
+        <details class="interest-card"><summary>Tennis</summary><p>I’ve played tennis since I was 12, and it’s still one of my favorite ways to stay active and spend time with my family.</p><p>Watching Carlos Alcaraz play live at the 2025 US Open was one of my favorite tennis memories.</p></details>
+      </div>
     </div>
   </div>
 </section>
 </main>
 <footer id="contact"><div class="wrap"><h2>Get in touch</h2><div class="actions"><a class="button" href="mailto:asalido@smu.edu">Email me</a><a href="https://www.linkedin.com/in/anasalido-/">Connect on LinkedIn ↗</a></div></div></footer>
+
+<script>
+const projectTabs = document.querySelector('[role="tablist"]');
+const tabs = Array.from(projectTabs.querySelectorAll('[role="tab"]'));
+const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+
+function selectProject(index) {
+  tabs.forEach((tab, position) => {
+    const selected = index === position;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    panels[position].hidden = !selected;
+  });
+}
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectProject(index));
+  panels[index].setAttribute('role', 'tabpanel');
+});
+projectTabs.addEventListener('keydown', event => {
+  const current = tabs.indexOf(event.target);
+  const targets = {ArrowRight: (current + 1) % tabs.length, ArrowLeft: (current + tabs.length - 1) % tabs.length, Home: 0, End: tabs.length - 1};
+  if (current < 0 || !Object.hasOwn(targets, event.key)) return;
+  event.preventDefault();
+  selectProject(targets[event.key]);
+  tabs[targets[event.key]].focus();
+});
+function syncProjectFromHash() {
+  const index = panels.findIndex(panel => '#' + panel.id === window.location.hash);
+  if (index !== -1) selectProject(index);
+}
+
+document.querySelectorAll('a[data-project]').forEach(link => {
+  link.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    selectProject(Number(link.dataset.project));
+  });
+});
+window.addEventListener('hashchange', syncProjectFromHash);
+selectProject(0);
+syncProjectFromHash();
+projectTabs.hidden = false;
+
+const courseTools = document.querySelector('.course-tools');
+const search = document.getElementById('course-search');
+const filters = Array.from(courseTools.querySelectorAll('button[data-school]'));
+const schools = Array.from(document.querySelectorAll('.coursework details[data-school]')).map(panel => ({
+  panel,
+  initiallyOpen: panel.open,
+  count: panel.querySelector('summary span'),
+  courses: Array.from(panel.querySelectorAll('.course-list li')).map(row => ({
+    row, text: row.textContent.toLowerCase()
+  }))
+}));
+const status = courseTools.querySelector('.course-count');
+let selectedSchool = 'all';
+
+function filterCourses() {
+  const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  const filtering = terms.length > 0 || selectedSchool !== 'all';
+  let total = 0;
+  for (const {panel, initiallyOpen, count, courses} of schools) {
+    const included = selectedSchool === 'all' || selectedSchool === panel.dataset.school;
+    let matches = 0;
+    for (const {row, text} of courses) {
+      const visible = included && terms.every(term => text.includes(term));
+      row.hidden = !visible;
+      if (visible) matches++;
+    }
+    panel.hidden = matches === 0;
+    panel.open = matches > 0 && (filtering || initiallyOpen);
+    count.textContent = matches === 1 ? '1 course' : matches + ' courses';
+    total += matches;
+  }
+  status.textContent = total === 0 ? 'No courses match. Try another search or school.' :
+    total === 1 ? '1 course found' : total + ' courses found';
+}
+search.addEventListener('input', filterCourses);
+for (const button of filters) {
+  button.addEventListener('click', () => {
+    selectedSchool = button.dataset.school;
+    filters.forEach(filter => filter.setAttribute('aria-pressed', String(filter === button)));
+    filterCourses();
+  });
+}
+filterCourses();
+courseTools.hidden = false;
+
+const travelMap = document.getElementById('travel-map');
+travelMap.addEventListener('toggle', () => {
+  const slot = travelMap.querySelector('.map-frame');
+  if (!travelMap.open || slot.firstElementChild) return;
+  const mapFrame = document.createElement('iframe');
+  mapFrame.title = 'Ana Salido’s interactive Pin Traveler map';
+  mapFrame.src = 'https://pintraveler.net/map?user=1O6nlJBvjWZxQMReKnK9q4KGgdH3';
+  mapFrame.referrerPolicy = 'no-referrer';
+  slot.append(mapFrame);
+});
+</script>
 </body>
 </html>
