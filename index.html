@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ana Salido’s portfolio. Research, communication, and program coordination in Dallas, Texas.">
+<title>Ana Salido | Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+:root{color-scheme:light;--paper:#f8f6ef;--ink:#222820;--green:#294437;--muted:#4d584d;--line:#cccfc1;--accent:#dae5c3;--serif:"Instrument Serif",Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.6 "DM Sans",Arial,sans-serif}
+a{color:inherit;text-underline-offset:.22em}
+a:focus-visible{outline:3px solid #9c5d24;outline-offset:5px}
+.wrap{width:min(1120px,calc(100% - 3rem));margin:auto}
+header{border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.15rem 0}
+.brand{font:1.7rem var(--serif);text-decoration:none}
+nav div{display:flex;gap:clamp(.7rem,2.5vw,2rem);flex-wrap:wrap}
+nav div a{font-size:.86rem;text-decoration:none}
+nav div a:hover{text-decoration:underline}
+.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(2rem,6vw,6rem);padding:clamp(3rem,8vw,7rem) 0;align-items:center}
+.kicker{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--serif);font-weight:400;line-height:.98}
+h1{font-size:clamp(4.3rem,11vw,9.5rem);letter-spacing:-.045em;margin:.25rem 0 1rem}
+h2{font-size:clamp(2.9rem,6vw,5rem);letter-spacing:-.028em;margin:.3rem 0 1.2rem}
+.lead{max-width:36rem;font-size:clamp(1rem,2.2vw,1.25rem);color:var(--muted)}
+.actions{display:flex;align-items:center;gap:1.35rem;flex-wrap:wrap;margin-top:1.6rem}
+.button{display:inline-block;background:var(--green);color:white;padding:.65rem 1.1rem;text-decoration:none;border-radius:2px;font-weight:600}
+.button:hover{background:#3d5a46}
+.profile{background:#e8ebdb;border:1px solid #d0d6c4;padding:clamp(1.3rem,4vw,2.4rem)}
+.profile p+p{margin-top:1rem}
+.profile .degree{font:2.1rem/1.05 var(--serif)}
+section{scroll-margin-top:1rem}
+.band{background:var(--green);color:var(--paper);padding:clamp(2.8rem,7vw,5rem) 0}
+.band .kicker{color:#d1e1cc}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,6vw,5rem);align-items:start}
+.case p+p{margin-top:.9rem}
+.metrics{display:grid;gap:1.2rem;padding:1.25rem 0}
+.metric{display:grid;gap:.35rem}
+.metric strong{font:2.5rem/1 var(--serif)}
+.track{height:.42rem;background:#476453}
+.fill{height:100%;background:#d8e4b5}
+.field{padding:clamp(2.8rem,7vw,5rem) 0}
+.row{display:grid;grid-template-columns:minmax(10rem,1fr) 2fr;gap:1rem 2rem;border-top:1px solid var(--line);padding:1.35rem 0}
+.row h3{font-size:1.15rem;line-height:1.3;margin-bottom:.35rem}
+.date,.sub{font-size:.9rem;color:var(--muted)}
+.details{border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:2rem 4rem}
+.details h3{font:1.9rem var(--serif);margin-bottom:.45rem}
+.details p+p{margin-top:.7rem}
+footer{background:#e8ebdb;padding:2.6rem 0}
+footer h2{font-size:clamp(2.7rem,6vw,4.3rem)}
+footer .actions{margin-top:1rem}
+@media(max-width:710px){.hero,.case,.row,.details{grid-template-columns:1fr}.hero{gap:2rem}.row{gap:.45rem}.wrap{width:calc(100% - 2rem)}}
+@media(max-width:370px){nav{align-items:flex-start}nav div{gap:.35rem .65rem;justify-content:flex-end}}
+
+.interest-layout h3{font:2rem/1.04 var(--serif);margin:.4rem 0 .7rem}
+.coursework details{border-top:1px solid var(--line)}
+.coursework details:last-child{border-bottom:1px solid var(--line)}
+.coursework summary{padding:1rem 0;cursor:pointer;font-weight:700}
+.coursework summary span{font-size:.85rem;color:var(--muted);margin-left:.5rem;font-weight:500}
+.course-list{list-style:none;margin:0;padding:0}
+.course-list li{display:grid;grid-template-columns:7rem 1fr;gap:.5rem;padding:.75rem 0;border-top:1px solid var(--line)}
+.course-list p,.course-code,.catalog{color:var(--muted);font-size:.91rem}
+.status{display:inline-block;margin-left:.4rem;background:var(--accent);padding:.1rem .4rem;font-size:.72rem}
+.catalog{padding:.85rem 0}
+.interests{background:#e8ebdb}
+.interest-layout{display:grid;grid-template-columns:1fr 1.25fr;gap:1.5rem 4rem}
+.travel{background:var(--green);color:var(--paper);padding:1.8rem}
+.travel strong{font:clamp(4rem,10vw,7.5rem)/.9 var(--serif);color:var(--accent)}
+.interest-list{margin:0}
+.interest-list div{border-top:1px solid var(--line);padding:.75rem 0}
+.interest-list dt{font-weight:700}
+.interest-list dd{margin:0;color:var(--muted)}
+@media(max-width:710px){.interest-layout{grid-template-columns:1fr}}
+@media(max-width:420px){.course-list li{grid-template-columns:1fr;gap:.15rem}nav{align-items:flex-start}nav div{justify-content:flex-end}}
+.kazoo{margin-top:1.5rem;background:#e8ebdb;border:1px solid #d0d6c4;padding:clamp(1.25rem,4vw,2.5rem)}
+.kazoo h2{font-size:clamp(2.6rem,6vw,4.3rem)}
+.kazoo p:not(.kicker){max-width:72ch}
+.kazoo p+p{margin-top:.9rem}
+</style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="#top">Ana Salido</a><div><a href="#work">Projects</a><a href="#coursework">Coursework</a><a href="#experience">Experience</a><a href="#interests">Interests</a><a href="#contact">Contact</a></div></nav></header>
+<main id="top">
+<div class="wrap hero">
+  <div>
+    <p class="kicker">Dallas, Texas</p>
+    <h1>Ana Salido</h1>
+    <p class="lead">I bring research, communication, and coordination to work that involves people, data, and decisions.</p>
+    <div class="actions"><a class="button" href="#experience">Explore my experience</a><a href="https://www.linkedin.com/in/anasalido-/">LinkedIn ↗</a></div>
+  </div>
+  <aside class="profile" aria-label="Education at a glance">
+    <p class="kicker">Education</p>
+    <p class="degree">M.S. in Business Analytics</p>
+    <p>SMU Cox School of Business<br><span class="sub">Expected May 2027</span></p>
+    <p><strong>B.B.A. in Marketing</strong><br>Texas A&amp;M University, May 2026<br><span class="sub">Analytics and Consulting · Economics minor · Cum Laude</span></p>
+  </aside>
+</div>
+<section class="band" id="work">
+  <div class="wrap case">
+    <div>
+      <p class="kicker">Featured class project · Texas A&amp;M</p>
+      <h2>Campus transit study</h2>
+      <p>How might an underground transit system change the way people get around campus? I designed a Qualtrics survey distributed to 156 stakeholders and conducted 26 interviews to understand travel habits, likely adoption, and willingness to pay.</p>
+      <p>I cleaned the survey data in Excel, built an interactive Tableau dashboard, and combined the survey and interview findings into a phased implementation recommendation.</p>
+    </div>
+    <div class="metrics" aria-label="Survey findings">
+      <div class="metric"><strong>62%</strong><span>of respondents had missed a campus bus</span><div class="track" aria-hidden="true"><div class="fill" style="width:62%"></div></div></div>
+      <div class="metric"><strong>Over 80%</strong><span>of respondents said the proposed system would be convenient</span><div class="track" aria-hidden="true"><div class="fill" style="width:80%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="wrap kazoo" aria-labelledby="kazoo-title">
+  <p class="kicker">Texas A&amp;M · MKTG 448 Marketing Strategy · Spring 2026</p>
+  <h2 id="kazoo-title">KazooView | Go-to-market strategy</h2>
+  <p>For a semester-long live-client capstone, our marketing team collaborated with biomedical engineering students on KazooView, a device concept designed to help parents get a clearer view of their child’s throat at home. We used interviews, surveys, and competitor research to understand what mattered most to parents, including material safety, ease of use, and making throat exams less stressful.</p>
+  <p>As <strong>Creative Strategy Lead</strong>, I researched potential partners and developed advertising concepts. Our team recommended introducing KazooView through parenting communities and nurse educators, using short demos to show how the device was intended to work. We presented our go-to-market strategy to the client and delivered a written report.</p>
+  <div class="actions"><a class="button" href="kazoo-view-selected-slides.pdf">View selected slides <span aria-hidden="true">↗</span></a></div>
+</section>
+<section id="coursework" class="wrap field">
+  <h2>Coursework</h2>
+  <div class="coursework">
+    <details open><summary>SMU Cox School of Business <span>8 courses</span></summary><ul class="course-list"><li><span class="course-code">ITOM 6252</span><div><strong>Decision Models</strong><p>Build spreadsheet models for optimization, simulation, and decisions under uncertainty.</p></div></li>
+<li><span class="course-code">ITOM 6253</span><div><strong>Programming for Analytics</strong><p>Use code to prepare, explore, and visualize data for business questions.</p></div></li>
+<li><span class="course-code">ITOM 6268</span><div><strong>Business Analytics Consulting</strong><p>Frame business problems, scope an analysis, and communicate recommendations.</p></div></li>
+<li><span class="course-code">MAST 6201</span><div><strong>Managerial Statistics</strong><p>Apply probability, hypothesis tests, and regression to business decisions.</p></div></li>
+<li><span class="course-code">ITOM 6265</span><div><strong>Database Design for Business</strong> <span class="status">In progress</span><p>Design relational databases and use SQL to query and combine tables.</p></div></li>
+<li><span class="course-code">ITOM 6267</span><div><strong>Predictive AI and ML</strong> <span class="status">In progress</span><p>Train and evaluate predictive models using business datasets.</p></div></li>
+<li><span class="course-code">MKTG 6247</span><div><strong>AI Marketing</strong> <span class="status">In progress</span><p>Assess marketing applications of AI and design pilots with measurable outcomes.</p></div></li>
+<li><span class="course-code">MKTG 6279</span><div><strong>Data-Driven Marketing</strong> <span class="status">In progress</span><p>Use segmentation and customer profiling to inform targeting decisions.</p></div></li></ul><p class="catalog"><a href="https://catalog.smu.edu/programs/BUSAN-MSBA/requirements-krhha">SMU program catalog ↗</a></p></details>
+    <details><summary>Texas A&amp;M Mays Business School <span>21 courses</span></summary><ul class="course-list"><li><span class="course-code">MKTG 321</span><div><strong>Marketing</strong><p>Explore how businesses identify customer needs and make product, pricing, promotion, and distribution decisions.</p></div></li>
+<li><span class="course-code">MKTG 322</span><div><strong>Consumer Behavior</strong><p>Study the social and psychological factors behind what people buy and how they decide.</p></div></li>
+<li><span class="course-code">MKTG 323</span><div><strong>Marketing Research</strong><p>Design research, collect and interpret data, and communicate findings for marketing decisions.</p></div></li>
+<li><span class="course-code">MKTG 335</span><div><strong>Professional Selling</strong><p>Practice identifying buyer needs, presenting solutions, and building customer relationships.</p></div></li>
+<li><span class="course-code">MKTG 401</span><div><strong>Global Marketing</strong><p>Compare international markets and adapt marketing decisions to local conditions.</p></div></li>
+<li><span class="course-code">MKTG 404</span><div><strong>Data Visualization for Marketers</strong><p>Create visualizations that communicate patterns in marketing data.</p></div></li>
+<li><span class="course-code">MKTG 430</span><div><strong>Marketing Consulting</strong><p>Scope a client problem and develop evidence-based recommendations and presentations.</p></div></li>
+<li><span class="course-code">MKTG 431</span><div><strong>Marketing Analytics</strong><p>Use data and statistical models to answer marketing questions.</p></div></li>
+<li><span class="course-code">MKTG 438</span><div><strong>Strategic Digital Marketing</strong><p>Plan digital marketing activities and evaluate their performance.</p></div></li>
+<li><span class="course-code">MKTG 448</span><div><strong>Marketing Strategy</strong><p>Bring research, positioning, and marketing decisions together in a strategic plan.</p></div></li>
+<li><span class="course-code">BUSN 403</span><div><strong>Business Writing</strong><p>Write and revise professional documents for different business audiences.</p></div></li>
+<li><span class="course-code">BUSN 470</span><div><strong>Applied Natural Language Processing</strong><p>Explore how language models and text analysis can support business decisions.</p></div></li>
+<li><span class="course-code">COMM 335</span><div><strong>Intercultural Communication</strong><p>Examine how cultural context shapes communication across groups.</p></div></li>
+<li><span class="course-code">MGMT 311</span><div><strong>Legal and Social Environment of Business</strong><p>Study legal institutions and the social responsibilities that shape business activity.</p></div></li>
+<li><span class="course-code">MGMT 363</span><div><strong>Managing People in Organizations</strong><p>Explore motivation, team dynamics, and leadership in the workplace.</p></div></li>
+<li><span class="course-code">MGMT 466</span><div><strong>Strategic Management</strong><p>Analyze competition, organizational capabilities, and business strategy.</p></div></li>
+<li><span class="course-code">SCMT 364</span><div><strong>Operations Management</strong><p>Study process design, capacity, inventory, and operational performance.</p></div></li>
+<li><span class="course-code">FINC 341</span><div><strong>Business Finance</strong><p>Learn how firms evaluate investments, financing, risk, and return.</p></div></li>
+<li><span class="course-code">ECON 323</span><div><strong>Microeconomic Theory</strong><p>Analyze consumer and firm behavior, pricing, and market structure.</p></div></li>
+<li><span class="course-code">ECON 420</span><div><strong>Law and Economics</strong><p>Use economic reasoning to examine how legal rules affect incentives and behavior.</p></div></li>
+<li><span class="course-code">ECON 452</span><div><strong>International Trade Policy</strong><p>Analyze trade policy and its effects on businesses, consumers, and economies.</p></div></li></ul><p class="catalog"><a href="https://catalog.tamu.edu/undergraduate/course-descriptions/">Texas A&amp;M course catalog ↗</a></p></details>
+  </div>
+</section>
+<section id="experience" class="wrap field">
+  <h2>Experience</h2>
+  <article class="row"><p class="date">Aug 2025 – May 2026</p><div><h3>Office Assistant</h3><p class="sub">Reynolds and Reynolds Sales Leadership Institute</p><p>Coordinated logistics for six or more recruiting and professional development events annually, supporting over 500 students and working with over 100 employer partners. Tracked program metrics in Excel and Qualtrics and prepared year-end reports to help leadership plan future events.</p></div></article>
+  <article class="row"><p class="date">Jan 2026 – May 2026</p><div><h3>Teaching Assistant, Amplify U</h3><p class="sub">Texas A&amp;M Athletics and Mays Business School</p><p>Supported 18 NCAA Division I student-athletes through individual feedback and professional development materials. Partnered with faculty to coordinate course operations and track student progress.</p></div></article>
+  <article class="row"><p class="date">May 2024 – Aug 2024</p><div><h3>Marketing Intern</h3><p class="sub">Cobalt Construction</p><p>Analyzed social media engagement to recommend content changes and worked with project and operations teams to align marketing with company priorities.</p></div></article>
+</section>
+<section id="about" class="wrap field details" aria-label="Skills and campus involvement">
+  <div><h3>Skills and training</h3><p>Advanced Excel, Tableau, Qualtrics, JMP, SPSS, and Adobe Suite. Currently developing skills in SQL, Python, R, and Power BI.</p><p>Training in marketing analytics and applied natural language processing for business decisions. Fluent in Spanish.</p></div>
+  <div><h3>Campus involvement</h3><p>Graduate Women in Business, Cox Golf Club, Student Leadership Group, and Business Aviation Club.</p></div>
+</section>
+
+<section id="interests" class="interests">
+  <div class="wrap field">
+    <h2>Outside of work</h2>
+    <div class="interest-layout">
+      <div class="travel"><strong>20+</strong><h3>Countries visited</h3><p>International travel is one of my favorite ways to explore.</p></div>
+      <dl class="interest-list"><div><dt>Aviation</dt><dd>The Boeing 747 is my favorite aircraft. I’m part of the Business Aviation Club at SMU.</dd></div><div><dt>Formula 1</dt><dd>I follow Formula 1.</dd></div><div><dt>Tennis</dt><dd>A personal interest.</dd></div></dl>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="contact"><div class="wrap"><h2>Get in touch</h2><div class="actions"><a class="button" href="mailto:asalido@smu.edu">Email me</a><a href="https://www.linkedin.com/in/anasalido-/">Connect on LinkedIn ↗</a></div></div></footer>
+</body>
+</html>
