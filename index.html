@@ -191,6 +191,296 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
   .hero .profile{box-shadow:5px 5px 0 #5a31593b}
   [id]{scroll-margin-top:8rem}
 }
+
+/* Scrapbook preview */
+.hero{background:linear-gradient(120deg,#fff5da 0%,#f8daed 52%,#cfeaff 100%);border-color:#c9a9c5;box-shadow:0 14px 38px #5a315915}
+.hero::before{background:repeating-radial-gradient(ellipse at 100% 100%,transparent 0 20px,#77547b24 21px 22px,transparent 23px 30px);mask-image:linear-gradient(105deg,transparent 35%,#000 88%)}
+.hero h1{position:relative;letter-spacing:-.06em}
+.hero h1::after{content:"";display:block;width:min(80%,19rem);height:.12em;margin:.04em 0 .13em;border-bottom:.055em solid #9d5280;border-radius:50%;transform:rotate(-4deg)}
+.hero>div>.kicker{display:inline-block;background:#fffaf5;border:1px dashed #925481;padding:.24rem .7rem;transform:rotate(-3deg)}
+.hero .profile{border:2px dashed #a77ca0;outline:6px solid #fffaf4}
+.hero .profile::after{content:"";position:absolute;top:-.7rem;right:1.4rem;width:4.75rem;height:1.45rem;transform:rotate(10deg);background:repeating-linear-gradient(130deg,#e3c1d9 0 6px,#f1dce7 6px 12px);opacity:.85;pointer-events:none}
+.strength{box-shadow:3px 4px 0 #5a315919}
+.strength-link span{display:inline-block;transition:transform .18s ease}
+.strength:hover .strength-link span,.strength:focus-visible .strength-link span{transform:translate(.2rem,-.15rem)}
+.switcher button{background:#e6efda;color:var(--green);border-color:#668266}
+.switcher #tab-kazoo{background:#f1dce7;color:var(--plum);border-color:#a7769d}
+.switcher #tab-global{background:#dce8f2;color:var(--navy);border-color:#7395b2}
+.switcher button[aria-selected=true]{background:var(--green);color:white}
+.switcher #tab-kazoo[aria-selected=true]{background:var(--plum);color:white}
+.switcher #tab-global[aria-selected=true]{background:var(--navy);color:white}
+.interest-card summary{display:flex;align-items:center;gap:.65rem;list-style:none}
+.interest-card summary::-webkit-details-marker{display:none}
+.interest-card summary::after{content:"+";margin-left:auto;font-size:1.35rem;line-height:1}
+.interest-card[open] summary::after{content:"−"}
+.interest-card[open]{box-shadow:3px 4px 0 #5a315927}
+.interest-icon{display:grid;place-items:center;width:2rem;height:2rem;background:#fffaf5;border:1px dashed currentColor;border-radius:50%;font-size:1rem}
+@media(prefers-reduced-motion:reduce){.strength-link span{transition:none}}
+
+.dallas-stamp{position:relative;display:inline-grid;gap:.25rem;width:8.4rem;padding:.45rem .55rem .35rem;transform:rotate(-4deg);color:#563354;background:#fff9ea;border:1px solid #d1a5bf;outline:3px dotted #fff9ea;box-shadow:3px 5px 0 #5a315925}
+.dallas-skyline{position:relative;display:block;height:2.8rem;overflow:hidden;background:linear-gradient(160deg,#f6d3e7,#d9ebfa);border-bottom:2px solid #73516f}
+.skyline-sun{position:absolute;right:.85rem;top:.3rem;width:1.1rem;height:1.1rem;border-radius:50%;background:#fff0ba}
+.skyline-buildings{position:absolute;inset:.3rem .35rem 0 1.75rem;background:linear-gradient(90deg,#7c5278,#a66c96);clip-path:polygon(0 100%,0 67%,13% 67%,13% 47%,26% 47%,26% 60%,37% 60%,37% 34%,44% 34%,44% 20%,62% 20%,62% 34%,69% 34%,69% 65%,80% 65%,80% 51%,90% 51%,90% 72%,100% 72%,100% 100%)}
+.skyline-tower{position:absolute;left:1rem;bottom:0;width:.16rem;height:1.6rem;background:#563354}
+.skyline-tower::before{content:"";position:absolute;left:50%;top:-.28rem;width:.64rem;height:.64rem;transform:translateX(-50%);border:1px solid #563354;border-radius:50%;background:radial-gradient(circle,#fff9ea 17%,transparent 21%) 0 0/.22rem .22rem,#a66c96}
+.dallas-caption{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;text-align:center;font-weight:700}
+
+/* Green, plum, and blue palette */
+body{background:#f7f8f1}
+header{background:#f7f8f1f5;border-color:#c9d5c6}
+.hero{background:#dce8f2;border-color:#a9bdcf}
+.hero::before{background:radial-gradient(circle,#456c923d 0 2px,transparent 2.5px) 0 0/24px 24px;background-repeat:repeat;mask-image:linear-gradient(90deg,transparent 0%,#000 65%)}
+.hero h1::after{border-color:var(--plum)}
+.hero .profile{background:#eef2e3;outline-color:#eef2e3;border-color:#6f8977;box-shadow:10px 10px 0 #29443735}
+.hero .profile::after{background:repeating-linear-gradient(130deg,#98b3a0 0 6px,#c1d2bf 6px 12px)}
+.band{background:var(--green)}
+.metric:nth-child(2) strong{color:#dce8f2}
+.metric:nth-child(2) .fill{background:#dce8f2}
+.dallas-skyline{background:#cadff0}
+.skyline-buildings{background:#71516f}
+.kazoo,.strength.creative,.interest-card.formula,.switcher #tab-kazoo{background:#e8ddec;border-color:#ae95b1}
+.switcher #tab-kazoo[aria-selected=true]{background:var(--plum);color:white}
+.travel strong{color:#dce8f2}
+@media(max-width:710px){.hero .profile{box-shadow:5px 5px 0 #29443735}}
+
+/* Mood-board edition */
+:root{
+  --paper:#fbf5e7;--ink:#282a23;--green:#2d4936;--muted:#505448;--line:#cfc6ac;
+  --accent:#dbe4c0;--plum:#633650;--blue:#d9e8ee;--navy:#294c62;
+  --stripe:repeating-linear-gradient(90deg,#557c48 0 12px,#f4e4b9 12px 15px,#9dbfcf 15px 27px,#48697d 27px 30px,#f4e4b9 30px 38px,#79445e 38px 51px,#e3aab7 51px 55px,#a6a557 55px 67px,#f4e4b9 67px 71px);
+}
+body{background:var(--paper)}
+header{background:var(--paper);border-bottom:1px solid #b6aa8d}
+header::after{content:"";display:block;height:.45rem;background:var(--stripe)}
+.brand{color:var(--plum);font-style:italic}
+.hero{grid-template-columns:1.14fr .86fr;gap:clamp(1.2rem,5vw,4.3rem);background:#f8efd9;border:1px solid #a29979;border-radius:0;padding:clamp(1.3rem,5vw,3.75rem);box-shadow:6px 7px 0 #443a2515}
+.hero::before{inset:auto 0 0;height:.65rem;background:var(--stripe);mask-image:none}
+.hero h1{color:var(--plum);font-size:clamp(4rem,10vw,8.6rem);margin-top:0}
+.hero h1::after{border-color:#698855;width:54%;margin-top:-.035em}
+.hero .lead{color:#494637}
+.hero .button{background:var(--green)}
+.hero .button:hover{background:#3a5a42}
+.hero-collection{position:relative;display:grid;justify-items:center;gap:1.15rem;min-width:0;padding:.45rem .4rem 0}
+.hero-collection::before{content:"";position:absolute;inset:.25rem -.3rem .6rem 12%;background:repeating-linear-gradient(90deg,#d5e3e8 0 9px,#f5edda 9px 13px,#a6bdca 13px 15px,#f5edda 15px 23px);border:1px solid #a5b6b5;transform:rotate(3deg);z-index:-1}
+.matchbox{position:relative;display:grid;isolation:isolate;width:min(100%,15rem);padding-left:2.15rem;transform:rotate(-6deg);filter:drop-shadow(4px 6px 0 #49322630)}
+.matchbox::before{content:"";position:absolute;inset:.65rem 1rem .45rem 0;border:4px solid #70425d;background:repeating-linear-gradient(0deg,#a16374 0 3px,#efbe83 3px 8px,#d69d65 8px 10px);z-index:-1}
+.dallas-stamp{width:100%;padding:.45rem .65rem .35rem;gap:0;transform:none;background:#a85f85;color:#fff5e7;outline:0;border:3px double #fff1df;box-shadow:inset 0 0 0 4px #a85f85,inset 0 0 0 5px #f0c4cd}
+.dallas-caption{font:clamp(1.65rem,4vw,2.65rem)/1 var(--serif);letter-spacing:.12em;padding-top:.25rem}
+.dallas-state{font-size:.59rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;text-align:center}
+.dallas-skyline{height:3.2rem;background:#ebadc0;border-color:#713b60}
+.skyline-sun{background:#f9dd9b}
+.skyline-buildings{background:#70415f}
+.skyline-tower{background:#60354e}
+.hero .profile{width:min(100%,21rem);padding:clamp(.85rem,3vw,1.3rem);background:#e3e8c9;color:#293b2c;border:5px double #63794d;outline:4px solid #f9f0db;box-shadow:4px 6px 0 #364d3430;transform:rotate(1.5deg)}
+.hero .profile::after{display:none}
+.hero .profile .kicker,.hero .profile .sub{color:#42553c}
+.hero .profile .degree{font-size:clamp(1.6rem,3vw,2.1rem)}
+.strengths h2,.switcher h2,.interests h2{color:var(--plum)}
+.strength{border:5px double currentColor;border-radius:0;padding:1.15rem;background-clip:padding-box}
+.strength.research{background:#dbe8ed;color:#294c62}
+.strength.creative{background:#ead9e3;color:#633650}
+.strength.coordination{background:#e4e9c8;color:#39553c}
+.switcher{border-top:5px double #ad977a}
+.switcher button{border:1px solid currentColor;border-radius:.45rem .45rem 0 0;box-shadow:2px 2px 0 #443a251a}
+.band{background:#304d38}
+.kazoo,.global-project{border:5px double currentColor;border-radius:0}
+.interests{background:#ede8d7;border-top:5px double #a39c78;border-bottom:5px double #a39c78}
+.travel,.travel-map,.interest-card{border:4px double currentColor;border-radius:0}
+.interest-card.formula{background:#ead9e3}
+.interest-card.aviation{background:#dbe8ed}
+footer{background:#e2e8cf}
+@media(max-width:710px){.hero{grid-template-columns:1fr}.hero-collection{margin:.5rem 0 1rem}.hero .profile{transform:none}.hero-collection::before{inset:.35rem 0 .25rem 0}}
+
+.hero-collection .matchbox{margin-bottom:1.25rem}
+.texas-tile{position:relative;display:grid;justify-items:center;gap:.35rem;justify-self:end;margin:-.35rem -.55rem -1.15rem 0;padding:.55rem .7rem;background:#fff7e8;color:#294c62;border:3px double #48697d;box-shadow:3px 4px 0 #49322625;transform:rotate(7deg);font-size:.74rem;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .18s ease}
+.texas-tile:hover,.texas-tile:focus-visible{transform:rotate(2deg);text-decoration:underline}
+.tile-mosaic{display:grid;grid-template-columns:repeat(11,.38rem);gap:1px;background:#b9af97;padding:2px}
+.tile-mosaic i{width:.38rem;height:.36rem;background:#f6efd9;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)}
+.tile-mosaic .ink{background:#36556a}
+@media(prefers-reduced-motion:reduce){.texas-tile{transition:none}}
+
+.madrid-postcard{display:grid;grid-template-columns:1.4fr .85fr;gap:clamp(1.25rem,4vw,3rem);padding:clamp(1.25rem,4vw,2.8rem);background:#f8efd9;border:5px double #917650;box-shadow:5px 6px 0 #443a2515}
+.madrid-postcard h2{color:var(--plum)}
+.madrid-postcard p:not(.kicker)+p{margin-top:.75rem}
+.madrid-trips{align-self:center;padding:1.2rem;background:#dbe8ed;color:var(--navy);border:3px double #7491a2}
+.madrid-trips h3{font:1.7rem/1.1 var(--serif)}
+.madrid-trips ul{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:.85rem 0;padding:0}
+.madrid-trips li{border:1px solid #7491a2;padding:.15rem .5rem;background:var(--paper);font-size:.85rem}
+.madrid-trips a{font-size:.85rem;font-weight:700}
+@media(max-width:710px){.madrid-postcard{grid-template-columns:1fr}}
+
+/* Spanish postcard and ceramic-tile details */
+.madrid-postcard{position:relative;isolation:isolate;overflow:hidden;padding-bottom:clamp(2.1rem,5vw,3.7rem)}
+.madrid-postcard::after{content:"";position:absolute;inset:auto 0 0;height:.8rem;background:conic-gradient(from 45deg,#2c627a 0 25%,#f4e7c6 0 50%,#52765c 0 75%,#c67856 0) 0 0/.8rem .8rem;border-top:1px solid #ad936b;z-index:-1}
+.madrid-trips{background:#e4ebdf;border-color:#657d64}
+.madrid-trips .spain-stamps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin:1rem 0}
+.spain-stamps li{display:grid;justify-items:center;gap:.25rem;padding:.48rem .25rem;background:#f6e6c7;color:#754532;border:2px dotted currentColor;outline:1px solid currentColor;outline-offset:2px;text-align:center}
+.spain-stamps li:nth-child(2){background:#dce8ee;color:#294c62}
+.spain-stamps li:nth-child(3){background:#e8ead3;color:#375845}
+.spain-stamps li:nth-child(4){background:#ecdae3;color:#633650}
+.spain-stamps li>span{font:2rem/1 Georgia,serif}
+.spain-stamps strong{font-family:var(--serif);font-size:clamp(1rem,2.4vw,1.25rem);letter-spacing:.04em;font-weight:400}
+
+.campus-involvement h4{margin:.85rem 0 .2rem;color:var(--plum);font-size:.95rem}
+.campus-involvement ul{margin:0;padding-left:1.15rem}
+.campus-involvement li+li{margin-top:.2rem}
+.campus-involvement li::marker{color:var(--plum)}
+.hero .resume-link{display:inline-block;padding:.58rem .8rem;border:1px solid var(--plum);border-radius:2px;background:var(--paper);color:var(--plum);font-weight:700;text-decoration:none}.hero .resume-link:hover{text-decoration:underline}
+
+.transit-chart{min-width:0;border:1px solid #97ad8b;padding:clamp(.9rem,3vw,1.5rem);margin:0;background:#25412f}
+.transit-chart legend{font-weight:700;padding:0 .4rem}
+.transit-chart input{position:absolute;width:1px;height:1px;opacity:0}
+.transit-chart label{display:inline-block;margin:.2rem .25rem .3rem 0;padding:.35rem .6rem;border:1px solid #b3c9ae;border-radius:3px;cursor:pointer;font-size:.85rem}
+.transit-chart input:checked+label{background:#dce8f2;color:#213b30;font-weight:700}
+.transit-chart input:focus-visible+label{outline:3px solid #f4e4b9;outline-offset:3px}
+.finding{display:none;padding-top:.6rem}
+#finding-missed:checked~.finding-missed,#finding-convenience:checked~.finding-convenience{display:block}
+.finding strong{display:block;font:clamp(3.2rem,7vw,5.4rem)/.98 var(--serif);color:#dce8f2;margin-bottom:.4rem}
+.finding .track{margin:.7rem 0}
+.finding .fill{background:#dce8f2}
+.finding-note{font-size:.9rem;color:#edf1e8}
+.campaign-board{margin-top:1.4rem;padding-top:1rem;border-top:1px solid #aa87a0}
+.campaign-board h3{font:clamp(1.65rem,3vw,2.35rem)/1.1 var(--serif);margin-bottom:.8rem}
+.campaign-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem}
+.campaign-cards details{padding:.75rem .8rem;background:#fbf5e7;color:#633650;border:3px double currentColor}
+.campaign-cards details:nth-child(2){background:#e4e9c8;color:#39553c}
+.campaign-cards details:nth-child(3){background:#dbe8ed;color:#294c62}
+.campaign-cards summary{cursor:pointer;font-weight:700}
+.campaign-cards p{margin-top:.55rem;font-size:.92rem}
+.madrid-trips .spain-stamps{align-items:start}
+.spain-stamps li:first-child{grid-column:1/-1}
+.spain-stamps details{width:100%}
+.spain-stamps summary{display:grid;justify-items:center;gap:.2rem;cursor:pointer;list-style:none}
+.spain-stamps summary::-webkit-details-marker{display:none}
+.spain-stamps summary>span{font:1.7rem/1 Georgia,serif}
+.spain-stamps summary::after{content:"+";font-weight:700;line-height:1}
+.spain-stamps details[open] summary::after{content:"−"}
+.stamp-note{padding:.45rem .15rem 0}
+.stamp-note p{margin-bottom:.45rem}
+.stamp-note a{overflow-wrap:anywhere}
+@media(max-width:710px){.campaign-cards{grid-template-columns:1fr}}
+
+.transit-research{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+.transit-notes{background:#f8efd9;color:#2d4936;border:4px double #788b65;padding:clamp(.9rem,3vw,1.5rem)}
+.transit-notes h3{font:clamp(1.7rem,3vw,2.15rem)/1.05 var(--serif);margin-bottom:.55rem}
+.transit-notes details{margin-top:.85rem;border-top:1px solid #a3ae8b;padding-top:.65rem}
+.transit-notes summary{cursor:pointer;font-weight:700}
+.transit-caption{font-size:.86rem;margin:.6rem 0}
+.transit-theme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.transit-theme-grid>div{background:#dbe4c0;padding:.55rem}
+.transit-theme-grid>div+div{background:#ead9e3;color:#633650}
+.transit-theme-grid h4{font-size:.87rem;margin:0 0 .3rem}
+.transit-theme-grid ul{list-style:none;margin:0;padding:0;font-size:.83rem}
+.transit-theme-grid li{display:flex;justify-content:space-between;gap:.25rem;padding:.18rem 0}
+.transit-phases{margin:.6rem 0 0;padding-left:1.2rem;font-size:.9rem}
+.transit-phases li+li{margin-top:.45rem}
+@media(max-width:710px){.transit-research{grid-template-columns:1fr}}
+@media(max-width:390px){.transit-theme-grid{grid-template-columns:1fr}}
+
+.postcard-index{display:block;padding:0;margin-top:-1.5rem;margin-bottom:clamp(2rem,5vw,3.5rem)}
+.postcard-index ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(.65rem,2vw,1.25rem);list-style:none;margin:0;padding:0}
+.index-stamp{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:.65rem;min-height:4.65rem;height:100%;padding:.65rem .75rem;color:#31543b;background:#e3e8c9;border:2px dotted currentColor;outline:1px solid currentColor;outline-offset:2px;text-decoration:none;box-shadow:4px 5px 0 #443a2515;transition:transform .18s ease}
+.index-stamp.abroad{background:#f6e6c7;color:#754532}
+.index-stamp.campus{background:#dbe8ed;color:#294c62}
+.index-stamp.resume{background:#ead9e3;color:#633650}
+.index-stamp:hover{transform:translateY(-3px);text-decoration:underline}
+.index-stamp:focus-visible{outline:3px solid #9c5d24;outline-offset:4px}
+.stamp-emblem{display:grid;place-items:center;width:1.85rem;height:1.85rem;border-radius:50%;border:1px solid currentColor;font:1.1rem/1 Georgia,serif}
+.index-stamp strong{font:clamp(1.1rem,2.4vw,1.5rem)/1.05 var(--serif);overflow-wrap:anywhere}
+@media(max-width:710px){.postcard-index ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.postcard-index{margin-top:-1.2rem}}
+@media(prefers-reduced-motion:reduce){.index-stamp{transition:none}}
+
+.travel-summary h3{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15rem .55rem}
+.travel-summary strong{color:var(--plum);font-size:clamp(3.5rem,8vw,5rem);font-weight:400;line-height:.9}
+.interest-cards{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}
+@media(max-width:710px){.interest-cards{grid-template-columns:1fr}}
+
+.hero-keepsakes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);align-items:center;gap:clamp(.65rem,2vw,1.15rem);width:min(100%,25rem)}
+.portrait-print{position:relative;z-index:1;min-width:0;margin:0;padding:.45rem .45rem .85rem;background:#fffaf0;border:1px solid #b8a487;box-shadow:4px 6px 0 #49322624;transform:rotate(-4deg)}
+.portrait-print img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 50%}
+.hero-keepsakes .matchbox{width:100%;margin-bottom:.75rem;padding-left:clamp(.6rem,2vw,1.5rem)}
+.hero-keepsakes .dallas-caption{font-size:clamp(1.15rem,3vw,2rem)}
+.hero-keepsakes .texas-tile{margin-right:0;padding:.4rem;font-size:.68rem}
+@media(max-width:355px){.hero-keepsakes{grid-template-columns:1fr;justify-items:center}.portrait-print,.hero-keepsakes .matchbox{width:min(100%,11rem)}}
+
+.hero{align-items:start}
+.hero-title{display:grid;grid-template-columns:minmax(0,1fr) clamp(5.25rem,10vw,8rem);align-items:start;gap:clamp(.45rem,2vw,1.1rem);margin-bottom:.7rem}
+.hero-title h1{font-size:clamp(3.4rem,7.6vw,7.2rem);line-height:.87;margin:.12em 0 0}
+.hero-title .portrait-print{margin:.15rem .35rem .25rem 0}
+@media(max-width:375px){.hero-title{grid-template-columns:minmax(0,1fr) 4.65rem}.hero-title h1{font-size:3.05rem}}
+
+.madrid-festival{max-width:25rem;margin:1.1rem 0 .2rem;padding:.4rem .4rem .6rem;background:#fffaf0;border:1px solid #b8a487;box-shadow:3px 4px 0 #443a2517;transform:rotate(-1.4deg)}
+.madrid-festival img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:57% 78%}
+.madrid-festival figcaption{padding:.45rem .3rem 0;color:var(--plum);font:1.12rem/1.15 var(--serif)}
+
+.race-photo{margin:.85rem 0 .1rem;padding:.35rem .35rem .55rem;background:#fffaf0;border:1px solid #b8a487;box-shadow:3px 3px 0 #443a2517}
+.race-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 90%}
+.race-photo figcaption{padding:.4rem .25rem 0;color:var(--plum);font:1.05rem/1.15 var(--serif)}
+
+.boarding-photo{margin:.85rem 0 .1rem;padding:.35rem .35rem 0;background:#fffaf0;border:1px solid #7491a2;box-shadow:3px 3px 0 #294c621a}
+.boarding-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 47%}
+.boarding-photo figcaption{margin-top:.4rem;padding:.5rem .25rem;border-top:2px dashed #7491a2;color:var(--navy);font:1.05rem/1.15 var(--serif)}
+
+.project-postcard-wrap{margin-top:1.15rem;display:flex;justify-content:flex-end}
+.kazoo .project-postcard-wrap,.global-project .project-postcard-wrap{width:100%}
+.project-postcard-link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:.85rem;max-width:100%;padding:.55rem .8rem;background:var(--paper);color:var(--plum);border:3px double currentColor;box-shadow:3px 4px 0 #443a251f;text-decoration:none}
+.project-postcard-link>span:first-child{font-size:.75rem;font-weight:700}
+.project-postcard-link strong{grid-column:1;font:1.35rem/1.08 var(--serif)}
+.project-postcard-arrow{grid-column:2;grid-row:1/3}
+.project-postcard-link:hover strong{text-decoration:underline}
+@media(max-width:390px){.project-postcard-link{width:100%}}
+
+.interest-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+.interest-card.food{background:#f6e6c7;color:#754532}
+@media(max-width:710px){.interest-cards{grid-template-columns:1fr}}
+
+.dutch-project{background:#f6e6c7;color:#67422e;border-color:#94714e}
+.switcher #tab-dutch{background:#f6e6c7;color:#67422e;border-color:#94714e}
+.switcher #tab-dutch[aria-selected=true]{background:#67422e;color:white}
+
+.poppi-project{background:#ead9e3;color:var(--plum);border-color:#a67b99}
+.switcher #tab-poppi{background:#ead9e3;color:var(--plum);border-color:#a67b99}
+.switcher #tab-poppi[aria-selected=true]{background:var(--plum);color:white}
+.poppi-bars{list-style:none;max-width:36rem;margin:.8rem 0 0;padding:0}
+.poppi-bars li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.2rem .5rem;margin-bottom:.7rem}
+.poppi-track{grid-column:1/-1;height:.55rem;background:#fff8ef}
+.poppi-track span{display:block;height:100%;background:#795477}
+.poppi-bars li:last-child .poppi-track span{background:var(--green)}
+
+.alamo-project{background:#dbe8ed;color:var(--navy);border-color:#7395b2}
+.switcher #tab-alamo{background:#dbe8ed;color:var(--navy);border-color:#7395b2}
+.switcher #tab-alamo[aria-selected=true]{background:var(--navy);color:white}
+
+.ecoglow-project{background:#e4e9c8;color:var(--green);border-color:#778959}
+.switcher #tab-ecoglow{background:#e4e9c8;color:var(--green);border-color:#778959}
+.switcher #tab-ecoglow[aria-selected=true]{background:var(--green);color:white}
+
+.ecoglow-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;max-width:32rem;margin:1rem 0}
+.ecoglow-stats div{display:flex;flex-direction:column-reverse;gap:.2rem;padding:.65rem .8rem;background:var(--paper);border:3px double #778959}
+.ecoglow-stats dt{font-size:.85rem;font-weight:700}
+.ecoglow-stats dd{margin:0;font:2.5rem/1 var(--serif)}
+.alamo-tableau{max-width:55rem;margin:1.2rem 0;padding:.55rem;background:var(--paper);border:3px double #7395b2}.alamo-tableau img{display:block;width:100%;height:auto}.alamo-tableau figcaption{padding:.65rem .3rem .2rem;font-size:.9rem}.alamo-tableau figcaption a{font-weight:700}
+
+.featured-postcard{display:flex;flex-direction:column;gap:0;padding:.48rem;min-width:0}
+.postcard-art{display:grid;min-height:8rem;aspect-ratio:1.8;border:1px solid currentColor;overflow:hidden}
+.alamo-thumb{background:#142638}
+.alamo-thumb img{display:block;width:100%;height:100%;object-fit:contain}
+.transit-thumb{background:#2d4936;color:#fbf5e7;align-content:center;gap:.5rem;padding:.75rem}
+.transit-thumb div{display:grid;grid-template-columns:auto 1fr;align-items:baseline;column-gap:.45rem}
+.transit-thumb div strong{font:clamp(1.35rem,2.6vw,2.1rem)/1 var(--serif);white-space:nowrap}
+.transit-thumb div span{font-size:.73rem;line-height:1.15}
+.transit-thumb i{grid-column:1/-1;height:.23rem;margin-top:.22rem;background:#dbe4c0}
+.transit-thumb div+div i{background:#bcd6e6}
+
+.kazoo-thumb{place-items:center;padding:.6rem;background:repeating-linear-gradient(90deg,#683653 0 13px,#7b4463 13px 16px,#683653 16px 26px);color:#633650}
+.kazoo-print{display:grid;justify-items:center;gap:.15rem;width:min(82%,13rem);padding:.35rem .5rem .55rem;background:#fff3dc;border:4px double currentColor;box-shadow:3px 4px 0 #3c203b55}
+.kazoo-rosette{font:clamp(1.65rem,4vw,2.6rem)/1 Georgia,serif;color:#526f58}
+.kazoo-print-title{font:italic clamp(1.5rem,3.5vw,2.4rem)/1 var(--serif)}
+.postcard-copy{display:flex;flex:1;flex-direction:column;gap:.42rem;padding:.72rem .45rem .45rem}
+.postcard-copy>.kicker{font-size:.63rem;color:inherit}
+.postcard-copy>.strength-link{margin-top:auto;padding-top:.25rem}
+@media(max-width:710px){.postcard-art{min-height:0;max-height:13rem}.transit-thumb div strong{font-size:2.05rem}}
+
 </style>
 </head>
 <body>
@@ -198,50 +488,115 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
 <main id="top">
 <div class="wrap hero">
   <div>
-    <p class="kicker">Dallas, Texas</p>
-    <h1>Ana Salido</h1>
-    <p class="lead">I bring research, communication, and coordination to work that involves people, data, and decisions.</p>
-    <div class="actions"><a class="button" href="#experience">Explore my experience</a><a href="https://www.linkedin.com/in/anasalido-/">LinkedIn ↗</a></div>
+
+    <div class="hero-title"><h1>Ana Salido</h1><figure class="portrait-print"><img src="ana-salido-portrait.png" width="975" height="1463" alt="Ana Salido smiling in her graduation stole" fetchpriority="high"></figure></div>
+    <p class="lead">I’m studying business analytics at SMU after earning my marketing degree at Texas A&amp;M. I like figuring out what matters to people and using what I learn to make a plan, whether I’m studying how students get around campus or helping shape a campaign.</p>
+    <div class="actions"><a class="button" href="#experience">Explore my experience</a><a class="resume-link" href="ana-salido-resume.pdf" target="_blank" rel="noopener">View resume <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/anasalido-/">LinkedIn ↗</a></div>
   </div>
-  <aside class="profile" aria-label="Education at a glance">
+  <div class="hero-collection"><div class="matchbox"><div class="dallas-stamp"><span class="dallas-caption">Dallas</span>
+      <span class="dallas-skyline" aria-hidden="true">
+        <span class="skyline-sun"></span><span class="skyline-tower"></span><span class="skyline-buildings"></span>
+      </span>
+      
+    <span class="dallas-state">Texas</span></div><a class="texas-tile" href="#travel-map-title"><span class="tile-mosaic" aria-hidden="true"><i class="ink"></i><i class="ink"></i><i class="ink"></i><i class="ink"></i><i class="ink"></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i></i><i class="ink"></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i></i><i class="ink"></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i><i></i><i></i><i></i><i class="ink"></i></span><span>Explore my travels <span aria-hidden="true">↗</span></span></a></div><aside class="profile" aria-label="Education at a glance">
     <p class="kicker">Education</p>
     <p class="degree">M.S. in Business Analytics</p>
     <p>SMU Cox School of Business<br><span class="sub">Expected May 2027</span></p>
     <p><strong>B.B.A. in Marketing</strong><br>Texas A&amp;M University, May 2026<br><span class="sub">Analytics and Consulting · Economics minor · Cum Laude</span></p>
-  </aside>
+  </aside></div>
 </div>
 
+<nav class="wrap postcard-index" aria-label="Portfolio shortcuts">
+  <ul>
+    <li><a class="index-stamp projects" href="#work"><span class="stamp-emblem" aria-hidden="true">✦</span><strong>Projects</strong></a></li>
+    <li><a class="index-stamp abroad" href="#study-abroad"><span class="stamp-emblem" aria-hidden="true">✿</span><strong>Study Abroad</strong></a></li>
+    <li><a class="index-stamp campus" href="#about"><span class="stamp-emblem" aria-hidden="true">❖</span><strong>Campus Involvement</strong></a></li>
+    <li><a class="index-stamp resume" href="ana-salido-resume.pdf" target="_blank" rel="noopener"><span class="stamp-emblem" aria-hidden="true">↗</span><strong>View resume</strong></a></li>
+  </ul>
+</nav>
 <section class="wrap strengths" aria-labelledby="strengths-title">
   <h2 id="strengths-title">What I bring</h2>
   <div class="strength-grid">
-    <a class="strength research" href="#project-transit" data-project="0"><strong>Research &amp; insights</strong><span>Turn surveys and interviews into recommendations.</span><span class="strength-link">Campus transit study <span aria-hidden="true">↗</span></span></a>
-    <a class="strength creative" href="#project-kazoo" data-project="1"><strong>Creative strategy</strong><span>Use customer research to shape campaign ideas and find potential partners.</span><span class="strength-link">KazooView <span aria-hidden="true">↗</span></span></a>
-    <a class="strength coordination" href="#experience"><strong>Program coordination</strong><span>Coordinate events and work with students and employer partners.</span><span class="strength-link">Experience <span aria-hidden="true">↗</span></span></a>
+    <a class="strength featured-postcard coordination" href="#project-alamo" data-project="5">
+      <div class="postcard-art alamo-thumb"><img src="alamo-drafthouse-tableau-cities.png" alt="Tableau map and chart of offer completion by city" loading="lazy" decoding="async"></div>
+      <div class="postcard-copy"><span class="kicker">Data visualization</span><strong>Alamo Drafthouse</strong><span>Where did customers drop off before redeeming an offer?</span><span class="strength-link">Explore project <span aria-hidden="true">↗</span></span></div>
+    </a>
+    <a class="strength featured-postcard research" href="#project-transit" data-project="0">
+      <div class="postcard-art transit-thumb"><div><strong>62%</strong><span>had missed a bus</span><i style="width:62%" aria-hidden="true"></i></div><div><strong>Over 80%</strong><span>expected convenience</span><i style="width:80%" aria-hidden="true"></i></div></div>
+      <div class="postcard-copy"><span class="kicker">Research &amp; consulting</span><strong>Aggie Loop</strong><span>What would make students switch to underground transit?</span><span class="strength-link">Explore project <span aria-hidden="true">↗</span></span></div>
+    </a>
+    <a class="strength featured-postcard creative" href="#project-kazoo" data-project="1">
+      <div class="postcard-art kazoo-thumb" aria-hidden="true"><div class="kazoo-print"><span class="kazoo-rosette">✷</span><span class="kazoo-print-title">KazooView</span></div></div>
+      <div class="postcard-copy"><span class="kicker">Creative strategy</span><strong>KazooView</strong><span>How do you introduce a new product to parents who need to trust it?</span><span class="strength-link">Explore project <span aria-hidden="true">↗</span></span></div>
+    </a>
   </div>
 </section>
 
 <div id="work" class="wrap switcher">
   <h2>Projects</h2>
   <div role="tablist" aria-label="Projects" hidden>
-    <button id="tab-transit" type="button" role="tab" aria-controls="project-transit" aria-selected="true">Campus Transit</button>
+    <button id="tab-transit" type="button" role="tab" aria-controls="project-transit" aria-selected="true">Aggie Loop</button>
     <button id="tab-kazoo" type="button" role="tab" aria-controls="project-kazoo" aria-selected="false" tabindex="-1">KazooView</button>
-    <button id="tab-global" type="button" role="tab" aria-controls="project-global" aria-selected="false" tabindex="-1">Global Marketing</button>
+    <button id="tab-global" type="button" role="tab" aria-controls="project-global" aria-selected="false" tabindex="-1">James Avery</button>
+    <button id="tab-dutch" type="button" role="tab" aria-controls="project-dutch" aria-selected="false" tabindex="-1">Dutch Bros</button>
+    <button id="tab-poppi" type="button" role="tab" aria-controls="project-poppi" aria-selected="false" tabindex="-1">Poppi</button>
+    <button id="tab-alamo" type="button" role="tab" aria-controls="project-alamo" aria-selected="false" tabindex="-1">Alamo Drafthouse</button>
+    <button id="tab-ecoglow" type="button" role="tab" aria-controls="project-ecoglow" aria-selected="false" tabindex="-1">EcoGlow</button>
   </div>
 </div>
 <section class="band" id="project-transit" aria-labelledby="tab-transit">
   <div class="wrap case">
     <div>
-      <p class="kicker">Featured class project · Texas A&amp;M</p>
-      <h2>Campus transit study</h2>
-      <p>How might an underground transit system change the way people get around campus?</p>
-      <details class="project-notes"><summary>See how we got there</summary><p>I designed a Qualtrics survey distributed to 156 stakeholders and conducted 26 interviews to understand travel habits, likely adoption, and willingness to pay.</p>
-      <p>I cleaned the survey data in Excel, built an interactive Tableau dashboard, and combined the survey and interview findings into a phased implementation recommendation.</p></details>
+      <p class="kicker">Texas A&amp;M · MKTG 430 Marketing Consulting</p>
+      <h2>Aggie Loop campus transit study</h2>
+      <p>Our team studied whether a proposed automated underground route between Main Campus and West Campus would address everyday transportation problems. We combined 156 survey responses with 26 team interviews to assess demand, reliability, and barriers to adoption.</p>
+      <details class="project-notes" open><summary>My contribution</summary>
+        <p>I created, published, and distributed the Qualtrics survey and analyzed perceived benefits and concerns. I conducted and coded five interviews, synthesized key themes, and worked on the Tableau dashboard structure and its analysis of transportation pain points. I also examined how tunnel construction could affect existing campus infrastructure.</p>
+      </details>
     </div>
-    <div class="metrics" aria-label="Survey findings">
-      <div class="metric"><strong>62%</strong><span>of respondents had missed a campus bus</span><div class="track" aria-hidden="true"><div class="fill" style="width:62%"></div></div></div>
-      <div class="metric"><strong>Over 80%</strong><span>of respondents said the proposed system would be convenient</span><div class="track" aria-hidden="true"><div class="fill" style="width:80%"></div></div></div>
-    </div>
+    <fieldset class="transit-chart">
+      <legend>Explore the survey findings</legend>
+      <input type="radio" name="transit-finding" id="finding-missed" checked>
+      <label for="finding-missed">Missed buses</label>
+      <input type="radio" name="transit-finding" id="finding-convenience">
+      <label for="finding-convenience">Convenience</label>
+      <div class="finding finding-missed">
+        <strong>62%</strong><p>of respondents had missed a campus bus.</p>
+        <div class="track" aria-hidden="true"><div class="fill" style="width:62%"></div></div>
+        <p class="finding-note">Missed buses showed where the current experience fell short. We considered those pain points when developing our phased recommendation.</p>
+      </div>
+      <div class="finding finding-convenience">
+        <strong>Over 80%</strong><p>of respondents said the proposed system would be convenient.</p>
+        <div class="track" aria-hidden="true"><div class="fill" style="width:80%"></div></div>
+        <p class="finding-note">Interest in the proposed system helped inform our recommendation to introduce it in phases.</p>
+      </div>
+    </fieldset>
   </div>
+  <div class="wrap transit-research">
+    <section class="transit-notes" aria-labelledby="transit-interviews">
+      <h3 id="transit-interviews">What we heard in interviews</h3>
+      <p>Bus timing, limited parking, and long trips made it harder to plan the day. Speed and accessibility made the Loop appealing, while safety and cost were the most frequently coded concerns about adopting it.</p>
+      <details><summary>Explore the coded themes</summary>
+        <p class="transit-caption">Code frequencies across 26 team interviews. An interview could contribute to more than one theme.</p>
+        <div class="transit-theme-grid">
+          <div><h4>What made it appealing</h4><ul><li>Speed and efficiency <strong>19</strong></li><li>Accessibility <strong>15</strong></li><li>Openness and curiosity <strong>10</strong></li></ul></div>
+          <div><h4>What gave people pause</h4><ul><li>Safety <strong>12</strong></li><li>Cost <strong>11</strong></li><li>Logistics <strong>9</strong></li></ul></div>
+        </div>
+      </details>
+    </section>
+    <section class="transit-notes" aria-labelledby="transit-roadmap">
+      <h3 id="transit-roadmap">From research to a rollout plan</h3>
+      <p>Survey respondents who expected the Loop to save time or make trips simpler reported stronger intent to use it. Our Tableau dashboard highlighted students and staff living on campus or in Bryan–College Station as audiences to prioritize.</p>
+      <details><summary>See the proposed construction sequence</summary>
+        <ol class="transit-phases">
+          <li><strong>Plan the route and prepare the site.</strong> Study alignment, station locations, utilities, and soil conditions, then coordinate permits, staging, and temporary detours.</li>
+          <li><strong>Build the tunnel and stations.</strong> Construct launch and recovery shafts, bore the tunnel, and build the stations.</li>
+          <li><strong>Fit out and test the system.</strong> Install vehicle guidance, accessibility, and emergency systems, restore the surface, and test before commissioning.</li>
+        </ol>
+      </details>
+    </section>
+  </div>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-kazoo" data-project="1"><span>Next project</span><strong>KazooView</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
 </section>
 
 
@@ -251,7 +606,16 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
   <h2 id="kazoo-title">KazooView | Go-to-market strategy</h2>
   <p>For a semester-long live-client capstone, our marketing team collaborated with biomedical engineering students on KazooView, a device concept designed to help parents get a clearer view of their child’s throat at home. We used interviews, surveys, and competitor research to understand what mattered most to parents, including material safety, ease of use, and making throat exams less stressful.</p>
   <details class="project-notes"><summary>See how we got there</summary><p>As <strong>Creative Strategy Lead</strong>, I researched potential partners and developed advertising concepts. Our team recommended introducing KazooView through parenting communities and nurse educators, using short demos to show how the device was intended to work. We presented our go-to-market strategy to the client and delivered a written report.</p></details>
+  <section class="campaign-board" aria-labelledby="campaign-board-title">
+    <h3 id="campaign-board-title">KazooView campaign board</h3>
+    <div class="campaign-cards">
+      <details open><summary>Who we wanted to reach</summary><p>Parents of young children who were looking for a less stressful way to get a clearer view of their child’s throat at home.</p></details>
+      <details><summary>What we wanted them to understand</summary><p>Short demos would show how KazooView was intended to work. We also recommended clear information about material safety and simple instructions.</p></details>
+      <details><summary>Where we’d reach them</summary><p>We proposed working with parenting communities and nurse educators, using short social videos and posts to introduce the concept and collect feedback.</p></details>
+    </div>
+  </section>
   <div class="actions"><a class="button" href="kazoo-view-selected-slides.pdf">View selected slides <span aria-hidden="true">↗</span></a></div>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-global" data-project="2"><span>Next project</span><strong>James Avery</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
 </section>
 <section class="wrap global-project" id="project-global" aria-labelledby="tab-global">
   <p class="kicker">Texas A&amp;M · MKTG 401 Global Marketing</p>
@@ -261,6 +625,74 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
   <details class="project-notes"><summary>See how we got there</summary>
     <p>We proposed direct exporting, e-commerce, retail partnerships, and flagship storefronts. Our launch concept, <em>Joyas con Significado</em> (Jewelry with Meaning), centered on Mother’s Day in Mexico and used family stories to show the meaning behind each piece.</p>
   </details>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-dutch" data-project="3"><span>Next project</span><strong>Dutch Bros</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
+</section>
+<section class="wrap global-project dutch-project" id="project-dutch" aria-labelledby="tab-dutch">
+  <p class="kicker">Texas A&amp;M · MKTG 323 Marketing Research</p>
+  <h2>Dutch Bros | Reaching college students</h2>
+  <p>For a class research project, our team looked at how Dutch Bros could engage college students ages 18–24 on social media. We combined secondary research with interviews, focus groups, and a survey to understand what students noticed and what might get them to act.</p>
+  <details class="project-notes" open><summary>What we found</summary>
+    <p>Participants described Dutch Bros as friendly and fast. Instagram and TikTok helped students discover promotions, but several participants said seeing an ad alone hadn’t prompted them to buy. Discounts and giveaways gave them more reason to try it.</p>
+  </details>
+  <details class="project-notes"><summary>What we recommended</summary>
+    <p>Use short TikTok videos and Instagram Reels to showcase new drinks and staff, promote discounts and giveaways, and test campus pop-ups where students could sample drinks.</p>
+  </details>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-poppi" data-project="4"><span>Next project</span><strong>Poppi</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
+</section>
+<section class="wrap global-project poppi-project" id="project-poppi" aria-labelledby="tab-poppi">
+  <p class="kicker">Texas A&amp;M · MKTG 322 Consumer Behavior</p>
+  <h2>Poppi | Testing product messaging</h2>
+  <p>Our team tested whether a Poppi ad with gut-health messaging changed how likely people said they were to buy the soda. Of the 64 people recruited, 39 passed both attention checks and were included in the analysis.</p>
+  <details class="project-notes" open><summary>Compare the three conditions</summary>
+    <p>Mean self-reported purchase likelihood on a 0–100 scale</p>
+    <ul class="poppi-bars">
+      <li><span>Water bottle control</span><strong>33.1</strong><div class="poppi-track" aria-hidden="true"><span style="width:33.1%"></span></div></li>
+      <li><span>Poppi can only</span><strong>41.8</strong><div class="poppi-track" aria-hidden="true"><span style="width:41.8%"></span></div></li>
+      <li><span>Poppi ad with gut-health messaging</span><strong>69.3</strong><div class="poppi-track" aria-hidden="true"><span style="width:69.3%"></span></div></li>
+    </ul>
+  </details>
+  <details class="project-notes"><summary>What we took from it</summary>
+    <p>Participants who saw the gut-health ad reported higher purchase intent in this sample. Our team recommended testing clearer product messaging in future campaigns. The survey measured stated intent in response to an image, so actual purchases would need a separate test.</p>
+  </details>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-alamo" data-project="5"><span>Next project</span><strong>Alamo Drafthouse</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
+</section>
+<section class="wrap global-project alamo-project" id="project-alamo" aria-labelledby="tab-alamo">
+  <p class="kicker">Texas A&amp;M · MKTG 404 Data Visualization for Marketers</p>
+  <h2>Alamo Drafthouse | Where promotions lose momentum</h2>
+  <p>Our team used Tableau to examine how customers responded to offers by channel, city, age group, and promotion type. We wanted to identify where Alamo Drafthouse could focus its campaigns and make offers easier to redeem.</p>
+  <p><strong>My contribution.</strong> I developed all the recommendations in our final presentation and built the Tableau visuals for channel performance, city-level engagement, buy-one-get-one versus discount offers by age, and the offer funnel.</p>
+  <details class="project-notes" open><summary>Explore the offer funnel</summary>
+    <p>The largest drop in the dataset was between viewing an offer and completing it.</p>
+    <ul class="poppi-bars">
+      <li><span>Offers received</span><strong>76,277</strong><div class="poppi-track" aria-hidden="true"><span style="width:100.0%"></span></div></li>
+      <li><span>Offers viewed</span><strong>57,725</strong><div class="poppi-track" aria-hidden="true"><span style="width:75.7%"></span></div></li>
+      <li><span>Offers completed</span><strong>33,579</strong><div class="poppi-track" aria-hidden="true"><span style="width:44.0%"></span></div></li>
+    </ul>
+  </details>
+  <figure class="alamo-tableau">
+    <a href="alamo-drafthouse-tableau-cities.png" target="_blank" rel="noopener" aria-label="Open the full-size Tableau screenshot"><img src="alamo-drafthouse-tableau-cities.png" width="1445" height="700" loading="lazy" decoding="async" alt="Tableau map and bar chart comparing average offer completion rates across seven cities"></a>
+    <figcaption>I used a map to show where the highest-performing cities were and a bar chart to compare their average offer completion rates. <a href="alamo-drafthouse-tableau-cities.png" target="_blank" rel="noopener">View full-size chart ↗</a></figcaption>
+  </figure>
+  <details class="project-notes"><summary>What we recommended</summary>
+    <p>Prioritize email, which had the highest completion rate in the dataset at 15.23%. Test easier redemption and compare buy-one-get-one offers with discounts by age group, since the gap in completion rates was most pronounced among older customers.</p>
+  </details>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#project-ecoglow" data-project="6"><span>Next project</span><strong>EcoGlow</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
+</section>
+<section class="wrap global-project ecoglow-project" id="project-ecoglow" aria-labelledby="tab-ecoglow">
+  <p class="kicker">Texas A&amp;M · MGMT 466 Strategic Management</p>
+  <h2>EcoGlow | A refillable personal care subscription</h2>
+  <p>Our team developed EcoGlow as a class concept for a personal care subscription. Customers would receive everyday products such as soap and shampoo in refillable packaging and earn rewards for returning empty containers.</p>
+  <dl class="ecoglow-stats" aria-label="Scope of the analysis">
+    <div><dt>Competitors compared</dt><dd>4</dd></div>
+    <div><dt>Customer segments identified</dt><dd>3</dd></div>
+  </dl>
+  <details class="project-notes" open><summary>How we evaluated the business</summary>
+    <p>We used the Business Model Canvas to connect customers, partners, costs, and revenue. We applied Porter’s Five Forces and value chain analysis to examine the competitive pressures and operations behind the model. We also compared the concept with brands including Lush, Native, and Ethique.</p>
+  </details>
+  <details class="project-notes"><summary>What would make it work?</summary>
+    <p>The refill program could give customers a reason to stay, but sourcing, shipping, and cleaning returned containers could put pressure on margins. Our team identified refill logistics and transparent reporting of environmental impact as priorities as the concept scaled.</p>
+  </details>
+  <div class="wrap project-postcard-wrap"><a class="project-postcard-link" href="#work"><span>Back to</span><strong>Projects</strong><span class="project-postcard-arrow" aria-hidden="true">→</span></a></div>
 </section>
 <section id="coursework" class="wrap field">
   <h2>Coursework</h2>
@@ -314,15 +746,52 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
 </section>
 <section id="about" class="wrap field details" aria-label="Skills and campus involvement">
   <div><h3>Skills and training</h3><p>Advanced Excel, Tableau, Qualtrics, JMP, SPSS, and Adobe Suite. Currently developing skills in SQL, Python, R, and Power BI.</p><p>Training in marketing analytics and applied natural language processing for business decisions. Fluent in Spanish.</p></div>
-  <div><h3>Campus involvement</h3><p>Graduate Women in Business, Cox Golf Club, Student Leadership Group, and Business Aviation Club.</p></div>
+  <div class="campus-involvement">
+    <h3>Campus involvement</h3>
+    <h4>SMU</h4>
+    <ul>
+      <li><strong>Secretary, Student Leadership Group</strong></li>
+      <li>Graduate Women in Business</li>
+      <li>Cox Golf Club</li>
+      <li>Business Aviation Club</li>
+    </ul>
+    <h4>Texas A&amp;M</h4>
+    <ul>
+      <li>Freshman Exemplifying Aggie Spirit Together (FEAST)</li>
+      <li>Women in Aviation</li>
+      <li>Aggie AchieveMATES</li>
+      <li>Alpha Delta Pi, Zeta Lambda Chapter</li>
+      <li>Aggie Blossoms</li>
+      <li>Business Analytics and Consulting Organization (BACA)</li>
+    </ul>
+  </div>
 </section>
 
+<section id="study-abroad" class="wrap field study-abroad" aria-labelledby="study-abroad-title">
+  <div class="madrid-postcard">
+    <div>
+      <p class="kicker">Study abroad · Summer 2025</p>
+      <h2 id="study-abroad-title">Madrid, Spain</h2>
+      <p>I spent the summer of 2025 in Madrid, my favorite city in the world. At Universidad Nebrija, I took classes in Spanish literature and international business management.</p>
+      <p>What stayed with me most was the pace of everyday life. I loved how relaxed it felt and how people made time to enjoy the moment.</p>
+      <figure class="madrid-festival">
+        <img src="madrid-music-festival.png" width="1434" height="2028" loading="lazy" decoding="async" alt="Ana smiling in amber sunglasses in the crowd at an outdoor music festival">
+        <figcaption>At a music festival in Madrid, summer 2025. I love EDM and house music, so getting to go to a festival while I was there was a highlight.</figcaption>
+      </figure>
+    </div>
+    <div class="madrid-trips">
+      <h3>Postcards from Spain</h3>
+      <ul class="spain-stamps"><li><details><summary><span aria-hidden="true">✷</span><strong>Madrid</strong></summary><div class="stamp-note"><p>I studied Spanish literature and international business management at Universidad Nebrija. My favorite part of living in Madrid was the relaxed pace and the way people made time to enjoy the moment.</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Madrid%2C+Spain" target="_blank" rel="noopener noreferrer">Find Madrid on the map <span aria-hidden="true">↗</span></a></div></details></li><li><details><summary><span aria-hidden="true">❖</span><strong>Barcelona</strong></summary><div class="stamp-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Barcelona%2C+Spain" target="_blank" rel="noopener noreferrer">Find Barcelona on the map <span aria-hidden="true">↗</span></a></div></details></li><li><details><summary><span aria-hidden="true">✦</span><strong>Segovia</strong></summary><div class="stamp-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Segovia%2C+Spain" target="_blank" rel="noopener noreferrer">Find Segovia on the map <span aria-hidden="true">↗</span></a></div></details></li><li><details><summary><span aria-hidden="true">✿</span><strong>Valencia</strong></summary><div class="stamp-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Valencia%2C+Spain" target="_blank" rel="noopener noreferrer">Find Valencia on the map <span aria-hidden="true">↗</span></a></div></details></li><li><details><summary><span aria-hidden="true">✧</span><strong>Sevilla</strong></summary><div class="stamp-note"><a href="https://www.google.com/maps/search/?api=1&amp;query=Sevilla%2C+Spain" target="_blank" rel="noopener noreferrer">Find Sevilla on the map <span aria-hidden="true">↗</span></a></div></details></li></ul>
+      <a href="#travel-map-title">Explore my travel map <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
 <section id="interests" class="interests">
   <div class="wrap field">
     <h2>Outside of work</h2>
     <section class="travel-map" aria-labelledby="travel-map-title">
       <div class="travel-map-top">
-        <div><h3 id="travel-map-title">My travel map</h3><p>Explore the places I’ve pinned across 23 countries.</p></div>
+        <div class="travel-summary"><h3 id="travel-map-title"><strong>20+</strong> countries visited</h3><p>Explore the places I’ve pinned on my travel map.</p></div>
         <a class="button" href="https://pintraveler.net/map?user=1O6nlJBvjWZxQMReKnK9q4KGgdH3" target="_blank" rel="noopener noreferrer">Open in Pin Traveler <span aria-hidden="true">↗</span></a>
       </div>
       <details id="travel-map">
@@ -330,13 +799,12 @@ nav div a[aria-current=location]{background:var(--plum);color:white;text-decorat
         <div class="map-frame"></div>
       </details>
     </section>
-    <div class="interest-layout">
-      <div class="travel"><strong>20+</strong><h3>Countries visited</h3><p>International travel is one of my favorite ways to explore.</p></div>
-      <div class="interest-cards">
-        <details class="interest-card aviation"><summary>Aviation</summary><p>The Boeing 747 is my favorite aircraft, and I’ve had the chance to fly on one three times. I was involved in Women in Aviation at Texas A&amp;M and am now part of the Business Aviation Club at SMU.</p></details>
-        <details class="interest-card formula"><summary>Formula 1</summary><p>Seeing Charles Leclerc take the checkered flag at the 2024 United States Grand Prix in Austin was a Formula 1 highlight for me.</p></details>
-        <details class="interest-card"><summary>Tennis</summary><p>I’ve played tennis since I was 12, and it’s still one of my favorite ways to stay active and spend time with my family.</p><p>Watching Carlos Alcaraz play live at the 2025 US Open was one of my favorite tennis memories.</p></details>
-      </div>
+
+    <div class="interest-cards">
+        <details class="interest-card aviation"><summary><span class="interest-icon" aria-hidden="true">✈</span>Aviation</summary><p>The Boeing 747 is my favorite aircraft, and I’ve had the chance to fly on one three times. I was involved in Women in Aviation at Texas A&amp;M and am now part of the Business Aviation Club at SMU.</p><figure class="boarding-photo"><img src="boeing-747-at-the-gate.png" width="1098" height="1463" loading="lazy" decoding="async" alt="A Lufthansa Boeing 747 parked at the gate with jet bridges attached"><figcaption>Lufthansa Boeing 747 at the gate</figcaption></figure></details>
+        <details class="interest-card formula"><summary><span class="interest-icon" aria-hidden="true">🏁</span>Formula 1</summary><p>Seeing Charles Leclerc take the checkered flag at the 2024 United States Grand Prix in Austin was a Formula 1 highlight for me.</p><figure class="race-photo"><img src="us-grand-prix-2024.png" width="1098" height="1463" loading="lazy" decoding="async" alt="Ana smiling with the racetrack behind her at the United States Grand Prix"><figcaption>United States Grand Prix · Austin, 2024</figcaption></figure></details>
+        <details class="interest-card"><summary><span class="interest-icon" aria-hidden="true">🎾</span>Tennis</summary><p>I’ve played tennis since I was 12, and it’s still one of my favorite ways to stay active and spend time with my family.</p><p>Watching Carlos Alcaraz play live at the 2025 US Open was one of my favorite tennis memories.</p><figure class="race-photo"><img src="us-open-2025.png" width="1098" height="1463" style="object-position:50% 61%" loading="lazy" decoding="async" alt="Ana smiling in the stands with the US Open tennis court behind her"><figcaption>US Open · 2025</figcaption></figure></details>
+        <details class="interest-card food"><summary><span class="interest-icon" aria-hidden="true">&#127860;</span>Food</summary><p>Spanish, Italian, and Mexican are my favorite cuisines.</p></details>
     </div>
   </div>
 </section>
@@ -472,6 +940,7 @@ document.addEventListener('toggle', scheduleSectionCheck, true);
 projectTabs.addEventListener('click', scheduleSectionCheck);
 projectTabs.addEventListener('keydown', scheduleSectionCheck);
 scheduleSectionCheck();
+
 </script>
 </body>
 </html>
